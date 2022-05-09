@@ -1,0 +1,211 @@
+#chat-screen {
+  background-color: #abc1d1;
+  height: 500vh;
+}
+#chat-screen .alt-header,
+#chat-screen .status-bar {
+  top: 0;
+  /* top 0를 해주어야지 alt-header, status-bar가 같이 움직임 */
+  position: sticky;
+  /* 강의가 2020년도 꺼라서 top:0에다가 postion:fixed 였는데 skicky가 더 깔끔 
+  해보니깐 top:0을 해야지  alt-header, status-bar가 같이 움직임*/
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #abc1d1;
+}
+#chat-screen .status-bar {
+  z-index: 2;
+  /* alt-header의 background color가 status-bar를 가리는데 이를 z-index로 수정 
+z축의 순서를 정한다고 생각하면 된다*/
+}
+#chat-screen .alt-header {
+  margin-top: 10px;
+  z-index: 1;
+}
+/* $$$ fadeIn 정말 유용한 기능이다 $$$ */
+@keyframes fadeIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.main-chat {
+  margin-top: 0px;
+  /* postion:fixed 는 alt-header, status-bar 의 position fixed로 얘가 postion 적용된 것들을 인지를
+  안함 그래서 margin이 필요
+  하지만 position:sticky는 필요 없음 개쩜 ㄷㄷ*/
+  display: flex;
+  flex-direction: column;
+  /*  main에 여러가지 요소들이 위아래로 정렬되어야 하므로 flex-direction: column; 이용*/
+  align-items: center;
+  animation: fadeIn 3s linear;
+}
+.chat__timestamp {
+  color: white;
+  background-color: #92a4b2;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+
+.message-row {
+  width: 100%;
+  display: flex;
+}
+.message-row img {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  margin-right: 15px;
+}
+.message__author {
+  opacity: 0.8;
+  font-size: 13px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 7px;
+}
+.message__info {
+  display: flex;
+  align-items: flex-end;
+}
+.message__bubble {
+  background-color: white;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+  margin-right: 5px;
+}
+.message__time {
+  opacity: 0.8;
+  font-size: 13px;
+}
+
+.message-row__own {
+  justify-content: flex-end;
+}
+/* 변경사항이 필요할 때 이전의 것은 default값으로 돌려놓고
+원하는 부분을 바꿔야함 */
+.message-row__own .message__bubble {
+  background-color: var(--yellow);
+  border-top-right-radius: 0px;
+  border-top-left-radius: 10px;
+  margin-right: 0px;
+  margin-left: 5px;
+}
+
+/* oreder 속성은 flex children에게만 적용이 된다
+message__info에서 diplay flex 했으므로 가능 */
+.message-row__own .message__bubble {
+  order: 1;
+}
+.message-row__own .message__time {
+  order: 0;
+}
+/* 더 간단하게 하려면 */
+
+/* .message-row__own .message__info {
+  flex-direction: row-reverse;
+} */
+
+.reply {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 25px;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+/* input의 width 문제를 해결하기 위해서 column에 각각 width를 지정해주었다.
+width %의 의미는 width를 주는 것 바로 위에 parents의 width의 몇 %를 가져오는지 이다.
+그래서 column's family는 body라서 각각 10% 90%를 주었다. */
+.reply .reply__column:first-child {
+  width: 10%;
+}
+.reply .reply__column:last-child {
+  width: 90%;
+  position: relative;
+}
+.reply input {
+  padding: 10px;
+  width: 100%;
+  border: var(--main-border);
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+  /* width 100%할때 뭔가 적용이 안되는데 이것은 input이 column 안에 있기 때문
+  그리고 column이 width를 가지고 있지 않기 때문 */
+}
+.reply__column:last-child > i,
+.reply__column:last-child button {
+  position: absolute;
+  right: -3px;
+  top: 2px;
+}
+
+.reply__column:last-child > i {
+  /* 여기서 top, right는 absolute를 의미한다 */
+  right: 40px;
+  top: 10px;
+}
+.reply i {
+  opacity: 0.5;
+}
+/* .reply__column:last-child  i 으로 적용을 하게되면 i 안의 button 과 i가
+따로 움직이게 된다.그래서 직속으로 i 통채로 움직이게 하려면
+.reply__column:last-child > i 이렇게 해야한다. */
+
+.reply__column button {
+  background-color: var(--yellow);
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.reply__column button i {
+  opacity: 1;
+}
+.reply__column button:focus,
+.reply__column button:active {
+  outline: none;
+}
+
+/* + box랑 얼굴 표시가 서서히 사라지게 하는 것 
+이때 reply input(지금 적용하고 있는 것들의 parents)에 transition을 적용하지 않으면
+어색하게 작동을 한다. 아주 중요!!!*/
+.reply .reply__column:first-child,
+  /* display: none; 얘는 사라진 + box 자리까지 확장됨 */
+.reply .fa-smile,
+.reply button {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* focus with in : reply 내부에 focus 된 element가 있는지 보는 것
+아래는 reply에 focus 된 element가 존재하면 내용이 적용이 된다 */
+.reply:focus-within .reply__column:first-child,
+  /* display: none; 얘는 사라진 + box 자리까지 확장됨 */
+.reply:focus-within .fa-smile,
+.reply:focus-within button {
+  opacity: 0;
+}
+
+.reply:focus-within input {
+  width: 98vw;
+  transform: translateX(-10%) translateY(-80px);
+}
+
+.reply:focus-within {
+  /* 이것도 자연스럽게 하려면 얘의 부모인 .reply에 가서 transition 적용이 필요 */
+  transform: translateY(80px);
+}
