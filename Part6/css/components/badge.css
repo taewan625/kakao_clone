@@ -1,0 +1,13 @@
+.badge {
+  background-color: tomato;
+  width: 25px;
+  height: 25px;
+  border-radius: 12.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+}
+/* badge는 채팅창에 1표시 된게 많아서 component으로 만들려고 만든 것 그래서 이렇게
+만든 후에 friends, chats.html 에서 badge를 필요한 위치에 추가 해줘야함*/
