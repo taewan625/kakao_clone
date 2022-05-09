@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Akshar&display=swap");
+@import "reset.css";
+@import "status-bar.css";
+@import "variable.css";
+/* reset css file 은 브라우저 기본값을 다 없애고 완전 초기값으로 내가 만들고 싶은 형식으로 만들고 싶을 때 유용
+그리고 html에 link로 reset css 넣는 것보다 reset.css file을 만들고 import를 해주는 것이 훨씬 깔끔!! */
+body {
+  font-family: "Akshar", sans-serif;
+  /* google font에서 css를 통해서 추가하는 방법이 있다. 우선 상단 2x2 박스 클릭 후 css로 link 거는데 링크는 위와 같이
+상단에 두고 font family 안에 css code 넣음  니코는 apple font 좋아함 */
+}
+/* 시계가 완전 중간에 오게 하는 css skill(css hack) justify-content 말고 방법이 있음. 지금 noservice 부분이 커서 시계가 중간으로 
+가지 못하고 있음
+우선 justify-content: center; 로 맞추고 */
+
+.welcome-header {
+  margin: 90px 0px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
+  /* text-align: disply flex와 다르게 text를 가운데로 정렬 해주는 것이고 display flex는 div와 같은 element를 나열해주는 것 */
+}
+.welcome-header__title {
+  margin-bottom: 20px;
+  /* page ruler redox 가 사라짐. 구글 확장프로그램인데 크랙버젼 찾아야 됨 */
+  font-size: 25px;
+}
+.welcome-header__text {
+  width: 60%;
+  opacity: 0.7;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 30px;
+}
+#login-form input:focus {
+  outline: none;
+  /* #login-form input:focus { outline: none;} 을 reset.css에 넣어서 사용 가능*/
+  /* 처음에 할때는 focus code를 같이 쓰니깐 원하는대로 적용이 안됬는데 갑자기 됨. 이유는 모르겠지만
+  같이 쓰든 따로 쓰든 원하는데로 하기 */
+}
+#login-form input {
+  border: none;
+  padding: 15px 0px;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+#login-form input:not([type="submit"]) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s ease-in-out;
+  /* not 은 input에서 type이 submit이 아닌 녀석들만 적용할꺼야 라는 것
+  일반적으로 not(name) 인데 이번과 같은 경우는 []를 사용해야함. 앞에서 배웠다는데 기억이 안남 */
+}
+
+#login-form input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+#login-form input:focus {
+  outline: none;
+  border-color: var(--yellow);
+  /* input을 클릭했을 때 border의 색이 변함 */
+}
+
+#login-form input[type="submit"] {
+  background-color: var(--yellow);
+  cursor: pointer;
+  padding: 20px 0px;
+  border-radius: 5px;
+  /* cursor: 커서 모양이 바뀌는 것 */
+}
+#login-form a {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 13px;
+  /* inherit는 상속을 받는 다는 뜻으로 a의 parent인 form에게 받아야함. 
+  이 때 parent가 색이 없으면 default값으로 black이 설정됨 */
+}
