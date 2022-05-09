@@ -1,23 +1,14 @@
 .user-component {
   justify-content: space-between;
-  /* user-component는 div1 (img+name) div2 (우측것들) 로 구성되어있음. 2>를 옮기기 위해
-  space-between을 이용하는데 이때 위에 것은 우측에 아무것도 없고 있어도 얘도 우측으로
-  옮겨야 하므로 이렇게 써도 됨*/
 }
 .user-component {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-
-  /* 이때 div가 가로로 적용되지 않은 이유는 user-component의 가장 큰 div 2개만이
-  가로로 적용되었기 때문. 그래서 <div class="user-component__column"> 의 안의 div를
-  flex 할 필요가 있다*/
 }
 .user-component__column:first-child {
-  /* ##########first-childe가 img인줄 알았는데 div인 것 같음. pseudo 다시 공부 필요################################ */
   display: flex;
   align-items: center;
-  /* align-item을 사용하는 이유는 text를 가운데 정렬하기 위함 */
 }
 .user-component__avatar {
   width: 70px;
