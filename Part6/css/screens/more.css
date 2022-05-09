@@ -32,7 +32,6 @@
   margin-right: 30px;
   display: flex;
   flex-direction: column;
-  /* 이걸로 img, span을 세로로 고정 시킴. */
   align-items: center;
 }
 .more-suggestions__icon-image {
@@ -48,5 +47,4 @@
 .more-suggestions__icon-image i {
   font-size: 32px;
   color: white;
-  /* i의 색을 바꿀수 있던 이유는 i 단지 text이기 때문 */
 }
