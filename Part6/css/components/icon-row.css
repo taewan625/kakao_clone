@@ -1,0 +1,18 @@
+.icon-row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+}
+.icon-row__icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon-row__icon i {
+  font-size: 53px;
+}
+/* .icon-row__icon의 i로 지정하는 이유는 
+    그냥 i를 사용하면 wifi부터 모든 i에게 적용 되기 때문 */
+.icon-row__icon span {
+  margin-top: 15px;
+}
