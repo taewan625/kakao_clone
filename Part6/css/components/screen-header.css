@@ -4,14 +4,12 @@
   align-items: center;
   padding: var(--horizontal-space);
   margin-bottom: 15px;
-  /* variable 이용 */
 }
 .screen-header__title {
   font-size: 32px;
   font-weight: 600;
 }
 .screen-header__icons span {
-  /* 이것은 screen-header__icons의 모든 span 각각 의미*/
   margin-left: 25px;
   position: relative;
 }
@@ -30,7 +28,6 @@
   }
 }
 
-/* screen-header을 붙이는 이유는 여기만 적용시키고 싶어서 */
 .screen-header__icons .fa-cog:hover {
   animation: rotateCog 1s linear infinite;
 }
