@@ -3,8 +3,4 @@
   --horizontal-space: 25px;
   --main-border: 1px solid rgba(0, 0, 0, 0.2);
   --gray: rgba(0, 0, 0, 0.5);
-  /* Freinds screen에 가로에 margin이나 padding으로 동일한 공간이
-  필요한데 header에서 padding을 사용했으니깐 user-component에도 적용을
-  위해서 --horizontal-sapce 25px 만듬. 그리고 header에서 padding var()
-  로 바꿔주기*/
 }
