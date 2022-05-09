@@ -1,0 +1,57 @@
+#friends-display-link {
+  text-align: center;
+  display: block;
+  background-color: #fafafa;
+  padding: 15px 0px;
+  font-size: 18px;
+  margin-bottom: 15px;
+  margin-top: -15px;
+  /* screen-header.css에 margin-bottom을 추가해 줘서 영향을 줬기 때문 */
+}
+#friends-display-link i {
+  color: rgba(0, 0, 0, 0.3);
+  margin-bottom: 10px;
+}
+.friends-screen {
+  padding: 0px var(--horizontal-space);
+}
+.friends-screen__channel {
+  margin-top: 25px;
+  border-top: var(--main-border);
+  padding-top: 15px;
+}
+.friends-screen__channel-header {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes hideSplashScreen {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+/* visibility: hidden은 화면이 사라진 후에 화면 뒤에 있는 것을
+    클릭가능하게 하는 것 */
+#splash-screen {
+  background-color: var(--yellow);
+  position: absolute;
+  /* 이 div가 body 기준으로 absolute하길 바래서 relative를 
+  따로 정하지 않음 상단에 오길 바래서 top:0; 설정 */
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 132px;
+  animation: hideSplashScreen 1s ease-in-out forwards;
+  animation-delay: 2s;
+  /* forwards는 animation의 마지막 @keyframes를 유지
+  delay: 2s 후에 진행되는 것*/
+}
