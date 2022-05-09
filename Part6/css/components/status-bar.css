@@ -1,0 +1,32 @@
+.status-bar {
+  /* position: flex 하면 header 부분이 겹치게 되서 sticky로 하고 bottom 빼고 0으로 설정
+  sticky는 임계치 도달하면 그자리에 고정되는 속성이기 때문 */
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  padding: 5px 3px;
+}
+.status-bar__column {
+  width: 33%;
+}
+.status-bar__column:first-child span {
+  margin-right: 5px;
+}
+.status-bar__column:nth-child(2) {
+  display: flex;
+  justify-content: center;
+}
+.status-bar__column:last-child {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.status-bar__column .fa-battery-full {
+  margin: 0px 5px;
+}
