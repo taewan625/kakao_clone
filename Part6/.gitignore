@@ -1,0 +1,10 @@
+
+
+
+
+
+
+
+
+
+#  .DS_Store은 맥os나 window에서 만든 보이지 않는 임시파일이다. 이를 .gitignore로 무시한다.
