@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- link:css 단축키 -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to kokoa Clone</title>
+  </head>
+  <body>
+    <div class="status-bar">
+      <div class="status-bar__column">
+        <span>No service</span>
+        <i class="fas fa-wifi"></i>
+      </div>
+
+      <div class="status-bar__column">
+        <span>18:43</span>
+      </div>
+      <div class="status-bar__column">
+        <span>110%</span>
+        <i class="fas fa-battery-full fa-lg"></i>
+        <i class="fas fa-bolt"></i>
+      </div>
+
+      <!-- i class 는 script에서 만든 것이므로 script를 지우면 당연히 작동 안한다 -->
+    </div>
+
+    <header class="welcome-header">
+      <h1 class="welcome-header__title">Welcome to Kokoa Clone</h1>
+      <p class="welcome-header__text">
+        If you have Kokoa Account, <br />
+        log in with your email or phone number
+      </p>
+    </header>
+
+    <form action="friends.html" method="get" id="login-form">
+      <!-- ############################################################################중요##################################################################################################
+          form은 중요한 2가지 속성(attribute)을 가지고 있다. 하나는 action이고 다른 하나는 method이다
+          1) action: 어떤 page로 data를 보낼건지 지정
+          2)method는 2가지 방법이 존재 1.post  2. get
+            1.post: 백엔드 서버에 정보를 전송하는 방식
+            2. get: 보안에 취약. URL에 포함되어도 상관없는 정보들을 get에 보내는 것 **username, password를 보내면 안됨
+                    예를 들어서 get에 username과 password가 URL 창(https://dfsdlfsdfl.username:sdfpassword:sdfa)에 다 나오게 됨
+                     cf) post를 사용하면 URL 창에 아무것도 나타나지 않게 됨-->
+
+      <input name="username" type="text" placeholder="Email or phone number" />
+      <input name="password" type="password" placeholder="Password" />
+      <input type="submit" value="Log In" />
+      <a href="#">Find Kokoa Account or Password</a>
+    </form>
+
+    <div id="no-mobile">
+      <span>Your screen is too big </span>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/6478f529f2.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- script ALWAYS GOES DOWN ; script는 항상 body 바로 위에 존재하여야 함 -->
+  </body>
+</html>
+<!-- bem css 좀더 쉽게 읽하는 css
+이말은 class 지정할 때도 이름을 __ 하듯이 해달라는 거임
+프로그래머가 되면될 수록 id 쓰다가 이름 바꾸다가 하면 점점 복잡해져서 이런 방식을 따르는 것임 -->
+<!-- 이미지를 받는 방법 2가지
+1) 직접 만들고 추출
+2) svg 파일이용 ; 픽셀이 없는 이미지 파일형식, 수학으로만 구성된 형식
+   1) heroicons
+2) FontAwesome -> 얘는 이메일을 보내고 하면 kitcode를 주는데 유로버전 쓸꺼 아니면 걍 노마드코더 공용 kitcode 이용하기
+   만약 사용하는데 그냥 box가 나오면 serching 창에서 6.1.1 버전에서 5.1.1 로 낮춰주면 가능하다-->
