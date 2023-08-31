@@ -5,7 +5,7 @@
   - [기획](#기획)
   - [실행환경](#실행환경)
   - [구현기능](#구현기능)
-  - [reference](#참조)
+  - [참조](#reference)
 
 ## 개요
 - 프로젝트 이름 : kakao_clone 코딩
@@ -20,7 +20,7 @@
 - Tool : vscode
 - Language : html5, css3
 
-## 구현 가능
+## 구현가능
 - github pages :  https://taewan625.github.io/kakao_clone/
 - 작성 필요
 
