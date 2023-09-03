@@ -56,7 +56,30 @@
   - transform
   - @keyframes
 
+- 페이지별 구현
+1. hide page  
+특정 가로픽셀 이상일 시, background 이미지를 올림  
+<img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://user-images.githubusercontent.com/104051002/265246234-9c54de6c-9b92-4d1f-a4d5-de5d58c21194.png" width="300" height="400">
 
+2. index page  
+index page 접근시, kakao bg를 특정시간 이후에 치우도록 설정
+<img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-out;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://user-images.githubusercontent.com/104051002/265246196-cf81cbcf-476b-4b84-951a-f8116fb38236.png"  width="300" height="400">
+
+3. chats page  
+채팅 목록 페이지  
+<img  width="300" height="400" alt="스크린샷 2023-09-03 오후 3 28 24" src="https://user-images.githubusercontent.com/104051002/265246209-22b5bd66-2260-484a-8d22-0173386dcb11.png" style="max-width: 100%;">
+  
+4. chat page  
+실제 채팅 페이지  
+<img width="300" height="400" alt="스크린샷 2023-09-03 오후 3 28 09" src="https://user-images.githubusercontent.com/104051002/265246224-439a3fd5-f8ef-4e49-bbd6-949866fec947.png" style="max-width: 100%;">
+
+5. find page  
+추가 페이지, hover로 heart 색 적용
+<img width="300" height="400"  alt="스크린샷 2023-09-03 오후 3 28 38" src="https://user-images.githubusercontent.com/104051002/265246161-91a8776c-8efd-49a1-88e8-9e8865878451.png" style="max-width: 100%;">
+
+6. more page  
+설정 페이지, display 정렬 적용, 톱니바퀴 회전 적용
+<img width="300" height="400" alt="스크린샷 2023-09-03 오후 3 28 36" src="https://user-images.githubusercontent.com/104051002/265246181-df12cdd4-f210-47f8-ae17-5e1d3cb8b91e.png" style="max-width: 100%;">
 
 ## reference
 - nomadCoders.co
